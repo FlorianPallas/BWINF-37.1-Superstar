@@ -1,0 +1,91 @@
+﻿<Window x:Class="Superstar.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Superstar"
+        mc:Ignorable="d"
+        Title="Superstar - BWINF Aufgabe 1" Height="450" Width="800">
+    <DockPanel>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <GroupBox Header="Gruppe" Name="GroupBoxGruppe" Grid.Column="0" Margin="5" Padding="5" IsEnabled="False">
+                <ListView Name="ListViewGruppe" BorderBrush="{x:Null}" />
+            </GroupBox>
+
+            <GroupBox Header="Anfragen" Name="GroupBoxAnfragen" Grid.Column="1" Margin="5" Padding="5" IsEnabled="False">
+                <ListView Name="ListViewAnfragen" BorderBrush="{x:Null}" />
+            </GroupBox>
+
+            <Grid Grid.Column="2" Margin="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <GroupBox Header="Aktionen" Padding="5" Grid.Row="0">
+                    <StackPanel>
+                        <Button Content="_Öffne Gruppendatei" Name="ButtonOeffne" Click="ButtonOeffneDatei_Click" Height="25" />
+                        <Button Content="_Finde Superstar" Name="ButtonFindeSuperstar" Click="ButtonFindeSuperstar_Click" Height="25" Margin="0 5 0 0" IsEnabled="False" />
+                        <Button Content="_Beenden" Name="ButtonBeenden" Click="ButtonBeenden_Click" Height="25" Margin="0 5 0 0" />
+                    </StackPanel>
+                </GroupBox>
+
+                <GroupBox Header="Details" Padding="5" Grid.Row="1" Name="GroupBoxDetails" IsEnabled="False">
+                    <StackPanel>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <Label Content="Dateiname:" Grid.Column="0" />
+                            <Label Content="-" Name="LabelDateiname" Grid.Column="1" />
+                        </Grid>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <Label Content="Mitglieder:" Grid.Column="0" />
+                            <Label Content="-" Name="LabelMitglieder" Grid.Column="1" />
+                        </Grid>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <Label Content="Beziehungen:" Grid.Column="0" />
+                            <Label Content="-" Name="LabelBeziehungen" Grid.Column="1" />
+                        </Grid>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <Label Content="Anfragen:" Grid.Column="0" />
+                            <Label Content="-" Name="LabelAnfragen" Grid.Column="1" />
+                        </Grid>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <Label Content="Superstar:" Grid.Column="0" />
+                            <Label Content="?" Name="LabelSuperstar" Grid.Column="1" />
+                        </Grid>
+                    </StackPanel>
+                </GroupBox>
+            </Grid>
+        </Grid>
+    </DockPanel>
+</Window>
